@@ -1,0 +1,25 @@
+.heading {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 20px;
+  color: black;
+  background-color: white;
+  box-shadow: 1px 1px 3px #355170;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}

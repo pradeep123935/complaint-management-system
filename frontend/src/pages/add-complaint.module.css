@@ -1,0 +1,35 @@
+.heading {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  margin: 40px auto;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.label {
+  font-size: 18px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  background-color: #021a35;
+  color: white;
+}
