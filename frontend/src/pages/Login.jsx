@@ -14,6 +14,7 @@ const Login = () => {
         <input
           type="password"
           placeholder="Password"
+          minlength="8"
           required
           className={styles.input}
         />
