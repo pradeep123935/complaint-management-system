@@ -15,16 +15,20 @@ import Home from "./pages/Home";
 import AddComplaint from "./pages/AddComplaint";
 import Dashboard from "./pages/Dashboard";
 import MyComplaints from "./pages/MyComplaints";
+import PrivateRoutes from "./components/PrivateRoutes";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
+
       <Route path="" element={<Home />}>
-        <Route index={true} path="/dashboard" element={<Dashboard />} />
-        <Route path="/add-complaint" element={<AddComplaint />} />
-        <Route path="/my-complaints" element={<MyComplaints />} />
+        <Route path="" element={<PrivateRoutes />}>
+          <Route index={true} path="/dashboard" element={<Dashboard />} />
+          <Route path="/add-complaint" element={<AddComplaint />} />
+          <Route path="/my-complaints" element={<MyComplaints />} />
+        </Route>
       </Route>
     </Route>
   )

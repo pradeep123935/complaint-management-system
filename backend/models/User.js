@@ -15,6 +15,7 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, "password is required"],
+      minLength: [6, "name must have atleast 4 characters"],
     },
     role: {
       type: String,

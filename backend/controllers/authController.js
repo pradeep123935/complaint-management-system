@@ -41,7 +41,7 @@ const login = asyncHandler(async (req, res) => {
   if (user) {
     const compare = await bcrypt.compare(password, user.password);
     if (!compare) {
-      res.status(401);
+      res.status(400);
       throw new Error("Incorrect email or password!!");
     }
 
@@ -60,7 +60,7 @@ const login = asyncHandler(async (req, res) => {
       role: user.role,
     });
   } else {
-    res.status(401);
+    res.status(400);
     throw new Error("Incorrect email or password!!");
   }
 });
