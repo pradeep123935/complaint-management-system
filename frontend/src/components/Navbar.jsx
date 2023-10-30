@@ -2,9 +2,31 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import styles from "./navbar.module.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { userDetails, setDetails } = useContext(AuthContext);
+
+  const logoutHandler = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/auth/logout"
+      );
+      if (response.status === 200) {
+        setDetails(null);
+        toast.success("Logout successfull!!");
+        navigate("/");
+      } else {
+        throw new Error();
+      }
+    } catch (err) {
+      toast.error("Something went wrong!");
+    }
+  };
+
   return (
     <header>
       <nav className={styles.nav}>
@@ -12,7 +34,9 @@ const Navbar = () => {
         <ul className={styles.list}>
           {userDetails !== "null" && userDetails ? (
             <li>
-              <span className={styles.link}>Logout</span>
+              <span className={styles.link} onClick={logoutHandler}>
+                Logout
+              </span>
             </li>
           ) : (
             <>

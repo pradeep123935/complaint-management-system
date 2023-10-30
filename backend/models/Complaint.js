@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ComplaintSchema = new mongoose.Schema(
   {
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
@@ -18,6 +18,7 @@ const ComplaintSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ["Submitted", "In Progress", "Done"],
+      default: "Submitted",
     },
     comments: {
       type: String,

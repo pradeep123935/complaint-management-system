@@ -20,10 +20,7 @@ const Register = () => {
       password,
     };
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
-        body
-      );
+      await axios.post("http://localhost:3000/api/auth/register", body);
       toast.success("Registration successfull!!");
       navigate("/");
     } catch (err) {
